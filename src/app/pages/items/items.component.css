@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+}
+
+.container{
+    border: solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    width: 18%;
+    
+}   
+
+.image{
+    width: 130px;
+}
+
+.hotelimg{
+    width: 150px;
+}
