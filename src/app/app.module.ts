@@ -8,6 +8,7 @@ import { CategoriesComponent } from './pages/categories/categories.component';
 import { ItemsComponent } from './pages/items/items.component';
 import { CreateorderComponent } from './pages/createorder/createorder.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-     HttpClientModule
+     HttpClientModule,
+     ReactiveFormsModule,
+     FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

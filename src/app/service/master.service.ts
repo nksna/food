@@ -16,4 +16,10 @@ export class MasterService {
    getrestrauntfoodlist(name:string){
     return this.http.get('https://freeapi.miniprojectideas.com/api/zomato/GetFoodItemByCategory?categoryId='+name)
   }
+  getLogin(name:string){
+    return this.http.post('https://freeapi.miniprojectideas.com/api/zomato/Login',name)
+  }
+  getplaceorder(name:any){
+      return this.http.post('https://freeapi.miniprojectideas.com/api/zomato/AddNewOrder',name)
+  }
 }

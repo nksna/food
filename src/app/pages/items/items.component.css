@@ -1,31 +1,42 @@
-.zomato{
+.zomato {
+    margin-top:100px;
     text-align: center;
-    background-image:url("/assets/background.jpg");
+    background-image: url("/assets/images.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position:center;
-}
-
-.container1,.image{
-    border:1px solid black;
-    width:20%;
-    padding:5px;
-    height: 350px;;
-    border-radius: 20%;
-    text-align: center;
-    margin-top:5px;
-    display:inline-block;
-    margin-left:5px ;
-    margin-bottom: 5px;
-    background-color: rgb(238, 109, 109);
-}   
-
-.image{
-    width:200px;
-    height:200px;
-    border-radius:50%;
-}
-
-.hotelcontent,p{
+    background-position: center;
+    padding: 20px; /* Add padding for better visual */
+  }
+  
+  .card {
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 15px;
+    background-color: rgb(216, 208, 208);
+    height: 100%; /* Increased height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* Hide overflowing content */
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+  
+  .hotelcontent {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Take up all available space */
+  }
+  
+  .hotelcontent p {
     font-size: large;
-}
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+  
+  
+  
