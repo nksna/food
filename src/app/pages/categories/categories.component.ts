@@ -29,7 +29,7 @@ export class CategoriesComponent implements OnInit {
    })
   
 }
-navigation(items:any){
- this.routes.navigate(['/Restaurant-items',items])
+navigation(items:any,item:any){
+ this.routes.navigate(['/Restaurant-items',items,item])
 }
 }

@@ -1,12 +1,13 @@
-<h1>Zomato</h1>
+ <div class="zomato">
+ <h1>{{zomato}}</h1>
 
-<div class="container" *ngFor="let restra of restraunt">
+<div class="container1 " *ngFor="let restra of restraunt">
     <div class="hotelimg">
         <img src={{restra.photoUrl}} class="image" alt="">
     </div>
     <div class="hotelcontent">
         <p>{{restra.menuItemName}}</p>
-        <p>{{restra.price}}</p>  
+        <p>${{restra.price}}</p>  
         <p>{{restra.restaurantName}}</p>
     </div>
 </div>
