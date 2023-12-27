@@ -7,63 +7,63 @@ import { DatePipe } from '@angular/common';
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.css']
 })
-export class ItemsComponent{
-  address:any;
-  restraunt:any[]=[];
-  quantity:number=0;
-  zomato:any;
-  selectedFoodItem:any;
+export class ItemsComponent {
+  address: any;
+  restraunt: any[] = [];
+  quantity: number = 0;
+  zomato: any;
+  selectedFoodItem: any;
   orderObj: any;
-   constructor(private Activate:ActivatedRoute,private master:MasterService){
-     this.Activate.params.subscribe((res:any)=>{
+  constructor(private Activate: ActivatedRoute, private master: MasterService) {
+    this.Activate.params.subscribe((res: any) => {
       this.loadrestrauntdatalist(res.categoryId)
-      this.zomato=res.categoryName
-     })
-     const LoggingData = localStorage.getItem('zamatouser');
-     if(LoggingData !=null){
+      this.zomato = res.categoryName
+    })
+    const LoggingData = localStorage.getItem('zamatouser');
+    if (LoggingData != null) {
       const data = JSON.parse(LoggingData)
-      this.orderObj=data.userId
-     }
-   }
+      this.orderObj = data.userId
+    }
+  }
 
-   
-   
-   openQtyModel(item:any){
+
+
+  openQtyModel(item: any) {
     const model = document.getElementById('myModal')
-    if(model !=null){
+    if (model != null) {
       model.style.display = "block";
     }
-    this.selectedFoodItem=item;
-   }
-   closeQtyModel(){
+    this.selectedFoodItem = item;
+  }
+  closeQtyModel() {
     const model = document.getElementById('myModal')
-    if(model !=null){
+    if (model != null) {
       model.style.display = "none";
     }
-   }
-   placeorder(){
-    const items={
-      
-        "userId": this.orderObj,  
-        "totalAmount": this.quantity*this.selectedFoodItem.price,
-        "restaurantId": this.selectedFoodItem.restaurantID,
-        "deliveryAddress": this.address,
-        
+  }
+  placeorder() {
+    const items = {
+
+      "userId": this.orderObj,
+      "totalAmount": this.quantity * this.selectedFoodItem.price,
+      "restaurantId": this.selectedFoodItem.restaurantID,
+      "deliveryAddress": this.address,
+
     };
-     
-    
-      this.master.getplaceorder(items).subscribe((res:any)=>{
-     if(res.result){
-      alert('Order Placed')
-      this.closeQtyModel();
-     }else{
-      alert(res.message)
-     }
+
+
+    this.master.getplaceorder(items).subscribe((res: any) => {
+      if (res.result) {
+        alert('Order Placed')
+        this.closeQtyModel();
+      } else {
+        alert(res.message)
       }
-      )
-   }
-  loadrestrauntdatalist(name:string){
-    this.master.getrestrauntfoodlist(name).subscribe((res:any)=>{
+    }
+    )
+  }
+  loadrestrauntdatalist(name: string) {
+    this.master.getrestrauntfoodlist(name).subscribe((res: any) => {
       if (name === "27") {
         this.restraunt = [
           {
@@ -98,7 +98,7 @@ export class ItemsComponent{
           },
           // Add more default items as needed
         ];
-        
+
       } else if (name === "25") {
         this.restraunt = [
           {
@@ -133,8 +133,8 @@ export class ItemsComponent{
           },
           // Add more default items as needed
         ];
-        
-      }else if (name === "23") {
+
+      } else if (name === "23") {
         this.restraunt = [
           {
             restaurantID: 0,
@@ -168,8 +168,8 @@ export class ItemsComponent{
           },
           // Add more default items as needed
         ];
-        
-      }else if (name === "24") {
+
+      } else if (name === "24") {
         this.restraunt = [
           {
             restaurantID: 0,
@@ -203,8 +203,8 @@ export class ItemsComponent{
           },
           // Add more default items as needed
         ];
-        
-      }else if (name === "26") {
+
+      } else if (name === "26") {
         this.restraunt = [
           {
             restaurantID: 0,
@@ -238,7 +238,7 @@ export class ItemsComponent{
           },
           // Add more default items as needed
         ];
-        
+
       } else if (name === "28") {
         this.restraunt = [
           {
@@ -273,8 +273,8 @@ export class ItemsComponent{
           },
           // Add more default items as needed
         ];
-        
-      }else if (name === "29") {
+
+      } else if (name === "29") {
         this.restraunt = [
           {
             restaurantID: 0,
@@ -308,8 +308,8 @@ export class ItemsComponent{
           },
           // Add more default items as needed
         ];
-        
-      }else if (name === "30") {
+
+      } else if (name === "30") {
         this.restraunt = [
           {
             restaurantID: 0,
@@ -343,8 +343,8 @@ export class ItemsComponent{
           },
           // Add more default items as needed
         ];
-        
-      }else if (name === "31") {
+
+      } else if (name === "31") {
         this.restraunt = [
           {
             restaurantID: 0,
@@ -378,7 +378,7 @@ export class ItemsComponent{
           },
           // Add more default items as needed
         ];
-        
+
       }
       else {
         // Handle the case when there is no data
@@ -386,5 +386,5 @@ export class ItemsComponent{
         this.restraunt = res.data;
       }
     });
-}
+  }
 }

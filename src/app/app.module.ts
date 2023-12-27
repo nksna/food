@@ -9,20 +9,26 @@ import { ItemsComponent } from './pages/items/items.component';
 import { CreateorderComponent } from './pages/createorder/createorder.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { RegisterComponent } from './register/register.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CategoriesComponent,
     ItemsComponent,
-    CreateorderComponent
+    CreateorderComponent,
+    UserprofileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
      HttpClientModule,
      ReactiveFormsModule,
-     FormsModule
+     FormsModule,
+     
   ],
   providers: [],
   bootstrap: [AppComponent]

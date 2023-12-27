@@ -1,21 +1,24 @@
 import { Component } from '@angular/core';
+import { MasterService } from '../service/master.service';
 import { Router } from '@angular/router';
-import { MasterService } from 'src/app/service/master.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent {
+export class RegisterComponent {
   constructor(private master:MasterService,private router:Router){}
   loginform:any
   loginObj:any={
    "userName":"",
-   "password":"" 
+   "password":"" ,
+   "mobileNo":"",
+   "email":"",
+   "role":""
   }
   Loginform(){
-      this.master.getLogin(this.loginObj).subscribe((res:any)=>{
+      this.master.getRegister(this.loginObj).subscribe((res:any)=>{
         if(res.result){
           localStorage.setItem('zamatouser',JSON.stringify(res.data))
           this.master.setLoginStatus(true);
