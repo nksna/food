@@ -60,3 +60,21 @@
     margin-top: 100px;
     ;
 }
+.input-group {
+    margin-bottom: 20px; /* Adjust the spacing as needed */
+  }
+  
+  .btn-outline-secondary {
+    color: #fff; /* Text color for the button */
+    background-color: #007bff; /* Background color for the button */
+    border-color: #007bff; /* Border color for the button */
+  }
+  
+  .btn-outline-secondary:hover {
+    color: #007bff; /* Text color on hover */
+    background-color: #fff; /* Background color on hover */
+    border-color: #007bff; /* Border color on hover */
+  }
+  .small-search {
+    width: 150px; /* Adjust the width as needed */
+  }

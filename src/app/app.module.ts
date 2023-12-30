@@ -11,7 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { RegisterComponent } from './register/register.component';
-
+import {AngularFireModule} from '@angular/fire/compat'
+import { Environments } from 'src/environments';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,12 +26,17 @@ import { RegisterComponent } from './register/register.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-     HttpClientModule,
-     ReactiveFormsModule,
-     FormsModule,
-     
+    AngularFireModule.initializeApp(Environments.firebase),
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
+  
+  
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

@@ -27,3 +27,6 @@ a {
   transform: translateY(-50%);
   cursor: pointer;
 }
+.pointere{
+  cursor: pointer;
+}

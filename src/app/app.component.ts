@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MasterService } from './service/master.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,6 +14,9 @@ export class AppComponent implements OnInit{
   name:any;
   logoff=false
   title = 'nks';
+  naveen="";
+  naveenma:any
+  management =false
   isNavbarCollapsed: boolean = true;
   constructor(private master:MasterService,private routes:Router){
     
@@ -21,17 +25,23 @@ export class AppComponent implements OnInit{
  ngOnInit(): void {
   this.master.loginStatus$.subscribe((status) => {
     if (status) {
-      const loggingData = localStorage.getItem('zamatouser');
+      const loggingData = localStorage.getItem('token2');
       if (loggingData !== null) {
         this.name = JSON.parse(loggingData);
-        this.data = this.name.userName;
+        this.data = this.name.email;
         this.logging=false;
         this.logoff = true
       }
+      if(this.data === ""){
+        
+        this.management =true;
+        
+       }
     }
   });
+ 
  }
-  
+
   toggleNavbar() {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
   }
@@ -41,9 +51,8 @@ export class AppComponent implements OnInit{
     this.data=''
     this.logging= true;
     this.logoff =false;
-    alert("logout successfully")}else{
-   alert("unable to Logout")
-    }
+    alert("logout successfully")}
+    this.management =false;
   }
 
 }

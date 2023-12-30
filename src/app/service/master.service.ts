@@ -11,12 +11,17 @@ export class MasterService {
 
   }
   private loginStatusSubject = new BehaviorSubject<boolean>(false);
+  private RegisterStatusSubject = new BehaviorSubject<boolean>(false);
 
   // Observable for login status
   loginStatus$ = this.loginStatusSubject.asObservable();
+  RegisterStatus$ = this.RegisterStatusSubject.asObservable();
 
   setLoginStatus(status: boolean) {
     this.loginStatusSubject.next(status);
+  }
+  setRegister(status: boolean) {
+    this.RegisterStatusSubject.next(status);
   }
   getAllfoodcatergories() {
     return this.http.get("https://freeapi.miniprojectideas.com/api/zomato/GetAllFoodCategory")

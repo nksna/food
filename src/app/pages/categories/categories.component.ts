@@ -10,6 +10,8 @@ import { MasterService } from 'src/app/service/master.service';
 export class CategoriesComponent implements OnInit {
   constructor(private master: MasterService, private routes: Router) { }
   categories: any[] = []
+  searchTerm: string = '';
+  filteredCategories: any[] = [];
   ngOnInit(): void {
     this.loadallfoodcategories()
   }
@@ -27,10 +29,20 @@ export class CategoriesComponent implements OnInit {
         });
       }
       this.categories = res.data;
+      this.filteredCategories = [...this.categories];
     })
 
   }
   navigation(items: any, item: any) {
     this.routes.navigate(['/Restaurant-items', items, item])
+  }
+  applyFilter() {
+    if (this.searchTerm.trim() === '') {
+      this.filteredCategories = [...this.categories];
+    } else {
+      this.filteredCategories = this.categories.filter(category =>
+        category.categoryName.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    }
   }
 }

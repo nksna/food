@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MasterService } from 'src/app/service/master.service';
 import { DatePipe } from '@angular/common';
+
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
@@ -45,7 +46,7 @@ export class ItemsComponent {
     const items = {
 
       "userId": this.orderObj,
-      "totalAmount": this.quantity * this.selectedFoodItem.price,
+      "totalAmount": this.selectedFoodItem.price,
       "restaurantId": this.selectedFoodItem.restaurantID,
       "deliveryAddress": this.address,
 
@@ -57,7 +58,11 @@ export class ItemsComponent {
         alert('Order Placed')
         this.closeQtyModel();
       } else {
+        res.message="Login to continue"
         alert(res.message)
+      }
+      if(this.orderObj === 0){
+        alert('Login to continue')
       }
     }
     )
