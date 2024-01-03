@@ -112,6 +112,7 @@ export class UserprofileComponent implements OnInit {
         "PhotoUrl":this.selectedFile
       }
         this.authservice.updateUser(uid,user)
+        this.closeQtyModel()
     }
   // ... (other methods)
 }
