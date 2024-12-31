@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { RegisterComponent } from './register/register.component';
 import {AngularFireModule} from '@angular/fire/compat'
+
 import { Environments } from 'src/environments';
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { Environments } from 'src/environments';
     AngularFireModule.initializeApp(Environments.firebase),
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+  
   ],
   
   

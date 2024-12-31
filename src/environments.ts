@@ -6,13 +6,14 @@ export const Environments ={
     
 
 firebase: {
-    apiKey: "AIzaSyArwAI9_Lsn-OCQ6gWAINS4UPPlb0D8VQY",
-    authDomain: "bluedice-8af83.firebaseapp.com",
-    projectId: "bluedice-8af83",
-    storageBucket: "bluedice-8af83.appspot.com",
-    messagingSenderId: "131403290422",
-    appId: "1:131403290422:web:a4cfb04cddd34cd8d70597",
-    measurementId: "G-9GX2X183W4"
+  apiKey: "AIzaSyAq4gbdIx6maLsJsXBoKx6hxx4kGq2t0ww",
+  authDomain: "market-e6b99.firebaseapp.com",
+  databaseURL: "https://market-e6b99.firebaseio.com",
+  projectId: "market-e6b99",
+  storageBucket: "market-e6b99.appspot.com",
+  messagingSenderId: "603331342037",
+  appId: "1:603331342037:web:a7f7a5c153bd3b93b1bc5c",
+  measurementId: "G-7GV4EX57RE"
   }
 
 

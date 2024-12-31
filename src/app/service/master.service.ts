@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { AuthServiceService } from '../auth-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MasterService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient ) {
 
   }
   private loginStatusSubject = new BehaviorSubject<boolean>(false);
@@ -24,7 +25,7 @@ export class MasterService {
     this.RegisterStatusSubject.next(status);
   }
   getAllfoodcatergories() {
-    return this.http.get("https://freeapi.miniprojectideas.com/api/zomato/GetAllFoodCategory")
+    return this.http.get("https://developers.zomato.com/api/v2.1/categories")
   }
 
   getrestrauntfoodlist(name: string) {

@@ -3,13 +3,16 @@ import {AngularFireAuth, }from '@angular/fire/compat/auth'
 import { Router } from '@angular/router';
 import {  GoogleAuthProvider } from '@angular/fire/auth';
 import { MasterService } from './service/master.service';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServiceService {
   recaptacha: any;
-
-  constructor(private fire:AngularFireAuth,private router:Router,private master:MasterService) { }
+  user: Observable<any>
+  constructor(private fire:AngularFireAuth,private router:Router,private master:MasterService) {
+    this.user = fire.user
+   }
   login(payload:any){
     this.fire.signInWithEmailAndPassword(payload.email,payload.password).then((res:any)=>{
       if(res){

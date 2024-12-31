@@ -52,7 +52,7 @@ export class ItemsComponent {
 
     };
 
-
+   this.address = items
     this.master.getplaceorder(items).subscribe((res: any) => {
       if (res.result) {
         alert('Order Placed')

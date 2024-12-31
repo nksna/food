@@ -27,7 +27,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "aot":true
           },
           "configurations": {
             "production": {
@@ -43,7 +44,8 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "aot":true
             },
             "development": {
               "buildOptimizer": false,
@@ -71,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nks:build"
+           "browserTarget": "nks:build"
           }
         },
         "test": {

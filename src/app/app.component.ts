@@ -19,6 +19,7 @@ export class AppComponent implements OnInit{
   management =false
   isNavbarCollapsed: boolean = true;
   constructor(private master:MasterService,private routes:Router){
+
     
    
   }
@@ -54,5 +55,12 @@ export class AppComponent implements OnInit{
     alert("logout successfully")}
     this.management =false;
   }
+
+
+
+
+
+ 
+
 
 }

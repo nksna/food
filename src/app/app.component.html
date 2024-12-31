@@ -3,7 +3,7 @@
     <div class="navbar-brand">
       <img src="./assets/food-court.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-2"
         width="40px" alt="profile">
-      <span class="text-white">FoodCourt</span>
+      <span class="text-white">teqtraining</span>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
@@ -12,12 +12,12 @@
     <div class="collapse navbar-collapse" [ngClass]="{ 'show': isNavbarCollapsed }" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item text-white"><a class="nav-link text-white" routerLink="foodcategories">Home</a></li>
-        <li class="nav-item text-white" *ngIf="logging"><a class="nav-link text-white" routerLink="login">Login</a></li>
-        <li class="nav-item text-white" *ngIf="logging"><a class="nav-link text-white" routerLink="register">Register</a></li>
-        <li class="nav-item text-white" *ngIf="logoff"><a class="nav-link text-white" routerLink="user-profile">User Profile</a></li>
-        <li class="nav-item text-white" *ngIf="management"><a class="nav-link text-white" routerLink="user-profile">Management</a></li>
-        <li class="nav-item text-white" *ngIf="logoff"><a class="nav-link text-white" (click)="Logout()">Logout</a></li>
-        <li>{{data}}</li>
+        <li class="nav-item text-white" ><a class="nav-link text-white" routerLink="login">About</a></li>
+        <li class="nav-item text-white" ><a class="nav-link text-white" routerLink="register">Service</a></li>
+        <li class="nav-item text-white" ><a class="nav-link text-white" routerLink="user-profile">Contact</a></li>
+        <!-- <li class="nav-item text-white" ><a class="nav-link text-white" routerLink="user-profile"></a></li>
+        <li class="nav-item text-white"><a class="nav-link text-white" (click)="Logout()">Logout</a></li> -->
+        
       </ul>
     </div>
   </div>
@@ -28,12 +28,52 @@
   <router-outlet></router-outlet>
  
 </div>
-<footer class="footer mt-5 bg-danger py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 d-flex align-items-center justify-content-center">
-        <p class="mb-0 text-white" style="font-size: larger;">&copy; 2023 FoodCourt. All Rights Reserved</p>
-      </div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Debugiz Technologies</h3>
+      <p>No: 188 2nd Floor</p>
+      <p>Next to Reliance Trends</p>
+      <p>Gowrivakkam, Sembakkam</p>
+      <p>Chennai, Tamil Nadu - 600073</p>
+      <p><strong>Phone:</strong> 9514080704</p>
+      <p><strong>Email:</strong> hrdebugiz.com</p>
+    </div>
+    <div class="footer-column">
+      <h3>Useful Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Our Services</h3>
+      <ul>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">Software Development</a></li>
+        <li><a href="#">SEO Services</a></li>
+        <li><a href="#">Cloud Development</a></li>
+        <li><a href="#">Mobile Apps Development</a></li>
+        <li><a href="#">Graphic & Multimedia Solutions</a></li>
+        <li><a href="#">E-Commerce Development</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Join Our Newsletter</h3>
+      <p>Get Updates from our Services to Notify</p>
+      <form action="#" class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
     </div>
   </div>
 </footer>
+  <!-- </div> -->
+<!-- </footer> --> 
+<!-- <div style="color: pink;"> -->
+
+ 
+

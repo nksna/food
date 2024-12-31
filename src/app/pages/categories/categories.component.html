@@ -1,26 +1,11 @@
 <div class="content hh">
     <h1 class="head text-white">Food Categories</h1>
     <div class="container container1">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control small-search" [(ngModel)]="searchTerm" (input)="applyFilter()" placeholder="Search categories" >
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" ><i class="bi bi-search" (click)="applyFilter()"></i></button>
-            </div>
-            
-          </div>
-          
-        <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let category of filteredCategories">
-                <div class="card" (click)="navigation(category.categoryId,category.categoryName)">
-                    <a>
-                        <img src="{{category.photoUrl}}" class="imglist img-fluid" alt="food image">
-                        <p class="discount-percentage">50% OFF</p>
-                        <div>
-                            <h1>{{category.categoryName}}</h1>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <img
+        *ngIf="images.length > 0"
+        [src]="images[currentImageIndex]"
+        class="img-fluid w-100 height"
+        alt="profile"
+      />
     </div>
 </div>
