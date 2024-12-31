@@ -4,8 +4,8 @@
   
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Reset password</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
+          <h4 class="modal-title">updateprofile</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeQtyModel()" ></button>
         </div>
   
         <!-- Modal body -->
@@ -24,39 +24,44 @@
            
             <input type="file" id="profileImage" (change)="onFileSelected($event)" class="form-control">
           </div>
+          <div class="modal-body">
+            <label>Address</label>
+            <input type="text" placeholder="Address" class="form-control" [(ngModel)]="Address">
+            
+          </div>
           
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >Send</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="updateprofile()" >Send</button>
         </div>
   
       </div>
     </div>
   </div>
- <div class="container">
+  <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <h2>User Profile</h2>
-        <button class="btn-color" (click)="openQtyModel()">update profile</button>
+        <button class="btn btn-color" (click)="openQtyModel()">Update Profile</button>
+        
         <div class="form-group">
           <label for="name">Name</label>
-          <p id="name">{{ name.userName}}</p>
+          <p id="name">{{ userData.displayName }}</p>
         </div>
         
         <div class="form-group">
           <label for="mobileNumber">Mobile Number</label>
-          <p id="mobileNumber">{{ name.mobileNo}}</p>
+          <p id="mobileNumber">{{ userData.Mobilenumber }}</p>
         </div>
         
         <div class="form-group">
           <label for="address">Address</label>
-          <p id="address">{{ data.Adress }}</p>
+          <p id="address">{{ userData.Address }}</p>
         </div>
         
         <div class="form-group">
           <label for="profileImage">Profile Image</label>
-          <img *ngIf="selectedFile" [src]="selectedFile" alt="Selected Image" class="img-thumbnail">
-          <input type="file" id="profileImage" (change)="onFileSelected($event)" class="form-control">
+          <img src="{{ userData.PhotoUrl }}" class="img-fluid" alt="Profile Image">
         </div>
         
         <hr>

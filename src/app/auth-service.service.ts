@@ -4,15 +4,15 @@ import { Router } from '@angular/router';
 import {  GoogleAuthProvider } from '@angular/fire/auth';
 import { MasterService } from './service/master.service';
 import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServiceService {
   recaptacha: any;
-  user: Observable<any>
-  constructor(private fire:AngularFireAuth,private router:Router,private master:MasterService) {
-    this.user = fire.user
-   }
+
+  constructor(private fire:AngularFireAuth,private router:Router,private master:MasterService,private firestore:AngularFirestore) { }
   login(payload:any){
     this.fire.signInWithEmailAndPassword(payload.email,payload.password).then((res:any)=>{
       if(res){
@@ -79,6 +79,22 @@ export class AuthServiceService {
       this.router.navigateByUrl('/register');
     });
   }
+  updateUser(uid: any, newData: any): Promise<void> {
+    const userDocRef = this.firestore.collection('users').doc(uid);
+
+    return userDocRef.set(newData, { merge: true })
+      .then(() => {
+        console.log('User data updated successfully');
+      })
+      .catch(error => {
+        console.error(`Error updating user data for UID ${uid}:`, error);
+        throw error;
+      });
+  }
   
+  
+  
+  
+
  
 }

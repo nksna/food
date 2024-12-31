@@ -54,6 +54,7 @@ export class AppComponent implements OnInit{
     this.logoff =false;
     alert("logout successfully")}
     this.management =false;
+    this.routes.navigateByUrl('/login')
   }
 
 

@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import {AngularFireModule} from '@angular/fire/compat'
 
 import { Environments } from 'src/environments';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { Environments } from 'src/environments';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(Environments.firebase),
+  
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
